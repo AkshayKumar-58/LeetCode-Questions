@@ -40,7 +40,7 @@ bool checkPalindrome(string s)
       for(char c :s){
         if(isAlphanumeric(c))
         {
-            temp.push_back(toLowerCase(c));   //On the hand converts in lowercase to save time
+            temp.push_back(toLowerCase(c));   //On the hand converts in lowercase
         }
       }
    
