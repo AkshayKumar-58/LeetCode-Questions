@@ -1,0 +1,32 @@
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+        queue<char>q1,q2;
+        for(int i=0;i<s.size();i++)
+        {
+            q1.push(s[i]);
+        }
+        for(int i=0;i<goal.size();i++)
+        {
+            q2.push(goal[i]);
+        }
+        if(q1==q2)
+            {
+                return true;
+            }
+        int k=goal.size()-1;
+        while(k!=0)
+        {
+            char storesFrontChar=q2.front();
+            q2.pop();  //delete first character from front
+            q2.push(storesFrontChar);
+
+            if(q1==q2)
+            {
+                return true;
+            }
+            k--;
+        }
+        return false;
+    }
+};
